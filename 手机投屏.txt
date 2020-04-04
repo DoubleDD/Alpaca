@@ -1,0 +1,2 @@
+ 
+/usr/bin/scrcpy --push-target /sdcard/tencent/MicroMsg/Download/
