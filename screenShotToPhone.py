@@ -23,7 +23,7 @@ strTime = time.strftime("%Y-%m-%d_%H-%M-%S", timeStruct)
 print(strTime)
 fileName=f'{strTime}.jpg'
 path = f'/home/kedong/Pictures/weixin/{fileName}'
-cmd = f'deepin-screenshot -s {path}'
+cmd = f'deepin-screen-recorder -s {path}'
 print(path)
 
 os.system(cmd)
