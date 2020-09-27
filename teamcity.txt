@@ -1,0 +1,13 @@
+docker run -it --name teamcity-server-instance  \
+    -v /var/teamcity/data:/data/teamcity_server/datadir \
+    -v /var/teamcity/logs:/opt/teamcity/logs  \
+    -p 8111:8111 \
+jetbrains/teamcity-server
+
+
+
+
+
+docker run -it -e SERVER_URL="10.0.1.19"  \
+    -v /var/teamcity_agent/conf:/data/teamcity_agent/conf  \
+    jetbrains/teamcity-agent
