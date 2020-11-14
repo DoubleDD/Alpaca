@@ -16,11 +16,11 @@ strTime = time.strftime("%Y-%m-%d_%H-%M-%S", timeStruct)
 
 print(strTime)
 fileName=f'{strTime}.jpg'
-deepinPath = '/home/kedong/Pictures/deepin'
+deepinPath = '/tmp/deepin'
 if not os.path.exists(deepinPath):
     print('创建目录')
     os.makedirs(deepinPath)
-path = f'/home/kedong/Pictures/deepin/{fileName}'
+path = f'{deepinPath}/{fileName}'
 cmd = f'deepin-screenshot -s {path}'
 print(path)
 
@@ -37,4 +37,10 @@ if not os.path.exists(path):
 
 print('截图完成')
 print('显示图片')
+
+# 拷贝图片到剪切板中
+sendImageToxclip = f'/usr/bin/xclip -selection clipboard -t image/jpeg -i "{path}"'
+print(sendImageToxclip)
+os.system(sendImageToxclip)
+print('ok!')
 #os.system(f'feh {path}')
